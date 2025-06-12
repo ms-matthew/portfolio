@@ -35,7 +35,7 @@ const Navbar = () => {
                                   transition={{ duration: 0.15 }}
                                 >
                                   <img
-                                    src={isOpen ? "/assets/close.svg" : "/assets/open.svg"}
+                                    src={isOpen ? "assets/close.svg" : "assets/open.svg"}
                                     className="w-6 h-6"
                                     alt="toggle"
                                   />
