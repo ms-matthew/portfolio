@@ -9,3 +9,5 @@ const HeroText = () => {
         </div>
     )
 }
+
+export default HeroText
