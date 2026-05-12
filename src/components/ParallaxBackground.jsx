@@ -9,7 +9,7 @@ const ParallaxBackground = () => {
   const mountain1Y = useTransform(x, [0, 0.5], ["0%", "0%"]);
 
   return (
-    <section className="absolute inset-0 bg-black/40">
+    <section className="absolute inset-0 -z-10 bg-black/40">
       <div className="relative h-screen overflow-y-hidden">
         {/* Background Sky */}
         <div
@@ -50,7 +50,7 @@ const ParallaxBackground = () => {
             y: mountain2Y,
           }}
         />
-        {/* Mountaine Layer 1 */}
+        {/* Mountain Layer 1 */}
         <motion.div
           className="absolute inset-0 -z-10"
           style={{
@@ -58,6 +58,29 @@ const ParallaxBackground = () => {
             backgroundPosition: "bottom",
             backgroundSize: "cover",
             y: mountain1Y,
+          }}
+        />
+        {/* Readability dimmer — stronger on mobile for terminal contrast */}
+        <div
+          className="absolute inset-0 hidden md:block"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(3,4,18,0.92) 0%, rgba(3,4,18,0.72) 40%, rgba(3,4,18,0.25) 70%, rgba(3,4,18,0) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(3,4,18,0.88) 0%, rgba(3,4,18,0.7) 50%, rgba(3,4,18,0.3) 100%)",
+          }}
+        />
+        {/* Soft top gradient so navbar area doesn't compete with text */}
+        <div
+          className="absolute inset-x-0 top-0 h-32"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(3,4,18,0.8), transparent)",
           }}
         />
       </div>
